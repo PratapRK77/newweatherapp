@@ -12,10 +12,9 @@ def homepage():
 @app.route("/weatherapp", methods = ['POST','GET'])
 def grt_weatherdata():
     url ="https://api.openweathermap.org/data/2.5/weather"
-
+    appid="7abb9086938be30f26f351c85713b98b"
     param  = {
         'q': request.form.get("city"),
-        'appid': request.form.get("appid"),
         'unit' : request.form.get("unit")
     }
     response= requests.get(url ,params = param)
