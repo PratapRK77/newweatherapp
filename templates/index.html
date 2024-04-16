@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PreciseDecise</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    
-    <p class="heading"> A smart way to make informed purchases on  <img src="static/flipkart.svg" alt="flipkart" class="logo">  by analyzing product reviews</p>
-    
-    <div class="container">
-        <h2>Flipkart Product-Reviews Sentiment Analyser</h2>
-        <form method="POST" action="/output">
-            <input type="text" name="url" placeholder="Enter Flipkart product-reviews URL" required>
-            <input type="submit" value="Predict Sentiment">
-        </form>
-        
-        <p>Please Enter the Flipkart product-reviews url in the format like this:</p>
-        <p style="color: #F8E831;">https://www.flipkart.com/(product name)/product-reviews/?pid=()&lid=()&marketplace=FLIPKART</p>
-    
-        <button id="copyUrlButton" >Copy Demo URL</button>
-    </div>
-    <script>
-        function copyDemoUrl() {
-            var demoUrl = "https://www.flipkart.com/samsung-galaxy-f15-5g-jazzy-green-128-gb/product-reviews/itm1357d201bcb0a?pid=MOBGYBAVT967G37V&lid=LSTMOBGYBAVT967G37VWBN6IA&marketplace=FLIPKART";
-            navigator.clipboard.writeText(demoUrl).then(function() {
-                alert("Demo URL copied to clipboard!");
-            }, function(err) {
-                console.error('Failed to copy: ', err);
-            });
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="weather-app">
+            <form class="search-form" action="">
+                <input
+                    class="city-input"
+                    type="text"
+                    placeholder="Enter City Name"
+                />
+                <button class="search-btn" type="submit">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+            <div class="city-date-section">
+                <h2 class="city">Delhi</h2>
+                <p class="date">7 Jan 2024</p>
+            </div>
+            <div class="temperature-info">
+                <div class="description">
+                    <i class="material-icons">sunny</i>
+                    <span class="description-text">Sunny</span>
+                </div>
+                <div class="temp">20°</div>
+            </div>
+            <div class="additional-info">
+                <div class="wind-info">
+                    <i class="material-icons">air</i>
+                    <div>
+                        <h3 class="wind-speed">4 KM/H</h3>
+                        <p class="wind-label">Wind</p>
+                    </div>
+                </div>
+                <div class="humidity-info">
+                    <i class="material-icons">water_drop</i>
+                    <div>
+                        <h3 class="humidity">45%</h3>
+                        <p class="humidity-label">humidity</p>
+                    </div>
+                </div>
+                <div class="visibility-info">
+                    <i class="material-icons">visibility</i>
+                    <div>
+                        <h3 class="visibility-distance">4 KM/H</h3>
+                        <p class="visibility">Visibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        // Event listeners for touch and click
-        document.getElementById("copyUrlButton").addEventListener("click", copyDemoUrl);
-        document.getElementById("copyUrlButton").addEventListener("touchstart", copyDemoUrl);
-    </script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
