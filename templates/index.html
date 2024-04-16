@@ -19,19 +19,6 @@
         </select><br><br>
         <button type="submit">Get Weather</button>
     </form>
-    <div id="weatherData"></div>
-
-    <script>
-        document.getElementById("weatherForm").addEventListener("submit", async function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            const responseData = await fetch('/weatherapp', {
-                method: 'POST',
-                body: formData
-            });
-            const jsonData = await responseData.json();
-            document.getElementById("weatherData").innerText = JSON.stringify(jsonData);
-        });
-    </script>
+   
 </body>
 </html>
